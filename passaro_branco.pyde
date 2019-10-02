@@ -1,16 +1,20 @@
 x0 = 1.0
 y0 = 5.0
-vx = 5.0
-vy = -5.0
+vx = 6.0
+vy = -6.0
 t0 = millis()
 oldt = t0/1000.0
+u = -10
+k=-10
+v = 0
+
 import copy
 
 def setup():
   size(1200,600)
 
 def draw():
-    global oldt, x0, y0, vx, vy
+    global oldt, x0, y0, vx, vy,u,k,v
     t = (millis()-t0)/1000.0  
     x = 100*(x0 + vx*t)
     y = 100*(y0 + vy*t+ 5*t*t)
@@ -24,6 +28,8 @@ def draw():
     if mousePressed:
         u = copy.copy(x)
         k = copy.copy(y)
-        v = 100*(k + 5*t*t)
-        fill(255)
-        ellipse(u,v,10,10)
+        vy = 1.1*vy
+    z = [u,v]
+    fill(255)
+    ellipse(u,k,10,15)
+    v = 100*(k + 5*t*t)
