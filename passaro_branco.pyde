@@ -32,7 +32,7 @@ def draw():
     
 def mouseClicked():
     global x,y,vy0,t0,x0,y0,p_ovoy,p_ovox,vovo
-    t = (millis()-t0)/1000
+    t = (millis()-t0)/1000.0
     p_ovox = x
     p_ovoy = y
     vy = vy0 + 1000*t
