@@ -45,7 +45,7 @@ def draw():
   ellipse(680+k,578,3,3)
   fill(30,59,29) #narina direita
   ellipse(690+k,578,3,3)
-  if (x-685-k)**2 + (y-575)**2 <= 2500:
+  if (x-685-k)**2 + (y-575)**2 <= 900:
       fill(169,216,229)
       noStroke()
       ellipse(685+k,575, 80,80)
