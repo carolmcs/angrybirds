@@ -1,3 +1,4 @@
+  
 x0 = 100.0
 y0 = 500.0
 vx0 = 600.0
@@ -36,8 +37,8 @@ def mouseClicked():
     p_ovox = x
     p_ovoy = y
     vy = vy0 + 1000*t
-    vy0 = 1.5*vy
-    vovo = abs(0.95*vy)
+    vy0 = vy - 1000
+    vovo = vy
     x0 = x
     y0 = y
     t0 = millis()
