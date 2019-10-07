@@ -8,8 +8,6 @@ g = 1000
 x = 0
 y = 0
 k = 400
-a = -10
-b = -10
 
 def setup():
   size(1200,600)
@@ -50,7 +48,7 @@ def draw():
   ellipse(680+k,578,3,3)
   fill(30,59,29) #narina direita
   ellipse(690+k,578,3,3)
-  if (x-685-k)**2 + (y-575)**2 <= 2500:
+  if (x-685-k)**2 + (y-575)**2 <= 900:
       fill(169,216,229)
       noStroke()
       ellipse(685+k,575, 80,80)
