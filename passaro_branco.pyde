@@ -1,36 +1,43 @@
-x0 = 1.0
-y0 = 5.0
-vx = 6.0
-vy = -6.0
+x0 = 100.0
+y0 = 500.0
+vx0 = 600.0
+vy0 = -600.0
 t0 = millis()
-oldt = t0/1000.0
-u = -10
-k=-10
-
-import copy
+p_ovox = -10
+p_ovoy=-10
+x = 0
+y = 0
 
 def setup():
   size(1200,600)
 
 def draw():
-    global oldt, x0, y0, vx, vy,u,k,v
+    global x0, y0, vx0, vy0,p_ovox,p_ovoy, t0,x,y
     t = (millis()-t0)/1000.0  
-    x = 100*(x0 + vx*t)
-    y = 100*(y0 + vy*t+ 5*t*t)
+    x = (x0 + vx0*t)
+    vy = vy0 + 1000*t
+    y = (y0 + vy0*t+ 500*t*t)
     background(169, 216, 229)
     stroke(0)
     fill(255)
     ellipse(x,y, 20, 20)
     fill(0,255,0)
     ellipse(685,585,30,30)
-    oldt = t
-    if mousePressed:
-        u = copy.copy(x)
-        k = copy.copy(y)
-        vk = copy.copy(vy)
-        vy = 1.1*vy
-    vu = 0
-    vk = vy
-    v = (k + vk*t + 50*t*t)
-    fill(255)
-    ellipse(u,v,10,15)
+    vovo = 0.95*vy0
+    v = (p_ovoy + vovo*t + 500*t*t)
+    fill(255,0,0)
+    ellipse(p_ovox,v,10,15)
+    print(x)
+    print(y)
+    
+def mouseClicked():
+    global x,y,vy0,t0,x0,y0
+    t = (millis()-t0)/1000
+    p_ovox = x
+    p_ovoy = y
+    vy = vy0 + 1000*t
+    vy0 = 1.5*vy
+    vovo = 0.95*vy
+    x0 = x
+    y0 = y
+    t0 = millis()
