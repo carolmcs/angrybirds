@@ -8,12 +8,13 @@ p_ovoy=-10
 x = 0
 y = 0
 vovo = 0
+k = 400
 
 def setup():
   size(1200,600)
 
 def draw():
-    global x0, y0, vx0, vy0,p_ovox,p_ovoy, t0,x,y
+    global x0, y0, vx0, vy0,p_ovox,p_ovoy, t0,x,y,k
     t = (millis()-t0)/1000.0  
     x = (x0 + vx0*t)
     vy = vy0 + 1000*t
@@ -24,33 +25,37 @@ def draw():
     ellipse(x,y, 25, 25)
     fill(137,186,35) #orelha
     stroke(60,108,34)
-    ellipse(705,555,15,15)
+    ellipse(705+k,555,15,15)
     fill(137,186,35) #outra orelha
     stroke(60,108,34)
-    ellipse(685,547,15,15)
+    ellipse(685+k,547,15,15)
     fill(137,186,35) #cabeça do porco
     stroke(60,108,34)
-    ellipse(685,575,50,50)
+    ellipse(685+k,575,50,50)
     fill(179,201,2) #nariz do porco
     stroke(60,108,34)
-    ellipse(685,578,21,15)
+    ellipse(685+k,578,21,15)
     fill(255) #olho esquerdo
     stroke(60,108,34)
-    ellipse(672,565,10,10)
+    ellipse(672+k,565,10,10)
     fill(255) #olho direito
     stroke(60,108,34)
-    ellipse(698,565,10,10)
+    ellipse(698+k,565,10,10)
     fill(0) #pupila direita
-    ellipse(698,565,3,3)
+    ellipse(698+k,565,3,3)
     fill(0) #pupila esquerda
-    ellipse(672,565,3,3)
+    ellipse(672+k,565,3,3)
     fill(30,59,29) #narina esquerda
-    ellipse(680,578,3,3)
+    ellipse(680+k,578,3,3)
     fill(30,59,29) #narina direita
-    ellipse(690,578,3,3)
+    ellipse(690+k,578,3,3)
     v = (p_ovoy + vovo*t + 500*t*t)
     fill(255)
     ellipse(p_ovox,v,10,15)
+    if (x-685-k)**2 + (y-575)**2 <= 2500 or (p_ovox-685-k)**2 + (v-575)**2 <= 2500:
+      fill(169,216,229)
+      noStroke()
+      ellipse(685+k,575, 80,80)
     
 def mouseClicked():
     global x,y,vy0,t0,x0,y0,p_ovoy,p_ovox,vovo
