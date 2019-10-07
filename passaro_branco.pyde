@@ -23,13 +23,35 @@ def draw():
     stroke(0)
     fill(255)
     ellipse(x,y, 20, 20)
-    fill(0,255,0)
-    ellipse(685,585,30,30)
+    fill(137,186,35) #orelha
+    stroke(60,108,34)
+    ellipse(705,555,15,15)
+    fill(137,186,35) #outra orelha
+    stroke(60,108,34)
+    ellipse(685,547,15,15)
+    fill(137,186,35) #cabeça do porco
+    stroke(60,108,34)
+    ellipse(685,575,50,50)
+    fill(179,201,2) #nariz do porco
+    stroke(60,108,34)
+    ellipse(685,578,21,15)
+    fill(255) #olho esquerdo
+    stroke(60,108,34)
+    ellipse(672,565,10,10)
+    fill(255) #olho direito
+    stroke(60,108,34)
+    ellipse(698,565,10,10)
+    fill(0) #pupila direita
+    ellipse(698,565,3,3)
+    fill(0) #pupila esquerda
+    ellipse(672,565,3,3)
+    fill(30,59,29) #narina esquerda
+    ellipse(680,578,3,3)
+    fill(30,59,29) #narina direita
+    ellipse(690,578,3,3)
     v = (p_ovoy + vovo*t + 500*t*t)
     fill(255)
     ellipse(p_ovox,v,10,15)
-    print(p_ovoy)
-    print(p_ovox)
     
 def mouseClicked():
     global x,y,vy0,t0,x0,y0,p_ovoy,p_ovox,vovo
