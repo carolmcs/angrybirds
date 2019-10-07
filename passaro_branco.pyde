@@ -1,4 +1,3 @@
-  
 x0 = 100.0
 y0 = 500.0
 vx0 = 600.0
@@ -21,8 +20,8 @@ def draw():
     y = (y0 + vy0*t+ 500*t*t)
     background(169, 216, 229)
     stroke(0)
-    fill(255)
-    ellipse(x,y, 20, 20)
+    fill(238,231,203)
+    ellipse(x,y, 25, 25)
     fill(137,186,35) #orelha
     stroke(60,108,34)
     ellipse(705,555,15,15)
