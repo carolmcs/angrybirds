@@ -52,7 +52,7 @@ def draw():
     v = (p_ovoy + vovo*t + 500*t*t)
     fill(255)
     ellipse(p_ovox,v,10,15)
-    if (x-685-k)**2 + (y-575)**2 <= 2500 or (p_ovox-685-k)**2 + (v-575)**2 <= 2500:
+    if (x-685-k)**2 + (y-575)**2 <= 900 or (p_ovox-685-k)**2 + (v-575)**2 <= 900:
       fill(169,216,229)
       noStroke()
       ellipse(685+k,575, 80,80)
